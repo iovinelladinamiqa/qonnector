@@ -46,7 +46,7 @@ class Qonnector {
     * Associa la keyword del plan all'articolo.
     */
 	static function add_plan_data_to_post($postId,$post){
-		if(isset($_SESSION['qonnector_plan_keyword_id']) && isset($_SESSION['qonnector_plan_action']) && ($post->post_status == 'publish' || $post->post_status == 'draft') ){
+		if(isset($_SESSION['qonnector_plan_keyword_id']) && isset($_SESSION['qonnector_plan_action']) && ($post->post_status == 'publish' || $post->post_status == 'draft' || $post->post_status == 'future') ){
 			switch ($_SESSION['qonnector_plan_action']) {
 				case 'write':
 					add_post_meta($postId, 'qonnector_plan_keyword_id', $_SESSION['qonnector_plan_keyword_id'],true);
