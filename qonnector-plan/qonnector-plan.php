@@ -58,7 +58,7 @@ class Qonnector {
 				case 'review':
 					// Passa la data di pubblicazione per registrare le date dei post programmati
 					//echo $post->post_date;
-					$publishDate = $post->post_date;
+					$publishDate = urlencode($post->post_date);
 					$action = 'a=setpublish&d='.$publishDate;
 					break;
 			}
